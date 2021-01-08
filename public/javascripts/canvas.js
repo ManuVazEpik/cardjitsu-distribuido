@@ -27,8 +27,8 @@ function init() {
 			card: undefined
 		});
 	}
-	labels["logo"] = new Label({x: 0.5, y: 0.3}, "Cardjitsu de 2 pesos", 100, true, false, true,labelFont2);	
-	labels["play"] = new Label({x: 0.5, y: 0.7}, "Jugar", 100, true, true,false, labelFont, enterQueue);
+	labels["logo"] = new Label({x: 0.5, y: 0.3}, "", 100, true, false, true,labelFont2);	
+	labels["play"] = new Label({x: 0.5, y: 0.5}, "Jugar", 100, true, true,false, labelFont, enterQueue);
 	labels["searching"] = new Label({x: 0.5, y: 0.7}, "Buscando   ", 100, false, false,false, labelFont);
 	labels["result"] = new Label({x: 0.5, y: 0.3}, "", 100, false, false, false, labelFont);
 	labels["rematch"] = new Label({x: 0.5, y: 0.62}, "Revancha", 100, false, false, false, labelFont2, requestRematch);
@@ -243,7 +243,7 @@ function drawUnknownCard(position, scale) {
 	ctx.fillRect(position.x + cardWidth * scale * 0.1, position.y + cardHeight * scale * 0.067, cardWidth * scale * 0.8, cardHeight * scale * 0.866);
 	ctx.fillStyle = "#d1d1d1";
 	ctx.font = "bold " + (72 * r * scale) + "px " + labelFont;
-	ctx.fillText("?", position.x + cardWidth * scale / 2, position.y + cardHeight * 0.5 * scale);
+	ctx.fillText("", position.x + cardWidth * scale / 2, position.y + cardHeight * 0.5 * scale);
 }
 
 function drawEmptySlot(slot) {
