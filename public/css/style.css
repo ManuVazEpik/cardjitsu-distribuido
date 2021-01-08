@@ -1,0 +1,26 @@
+canvas {
+	border: 1px solid black;
+	margin-top: 2vh;
+	  z-index: 0;
+	  background-image: url(https://media.discordapp.net/attachments/349216801961279508/653043537868488726/unknown.png?width=897&height=513);
+
+	
+}
+
+.play-guide {
+	margin: 5%;
+}
+
+html{
+
+	background-color: peru;
+	
+
+}
+
+.content{
+
+	background-color: peru;
+
+
+}
