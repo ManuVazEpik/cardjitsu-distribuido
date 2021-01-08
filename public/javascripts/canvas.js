@@ -28,12 +28,12 @@ function init() {
 		});
 	}
 	labels["logo"] = new Label({x: 0.5, y: 0.3}, "Cardjitsu de 2 pesos", 100, true, false, true,labelFont2);	
-	labels["play"] = new Label({x: 0.5, y: 0.7}, "Jugar", 100, true, true, true, labelFont, enterQueue);
-	labels["searching"] = new Label({x: 0.5, y: 0.7}, "Buscando   ", 100, false, false, true, labelFont);
-	labels["result"] = new Label({x: 0.5, y: 0.3}, "", 100, false, false, true, labelFont);
-	labels["rematch"] = new Label({x: 0.5, y: 0.62}, "Revancha", 100, false, false, true, labelFont2, requestRematch);
-	labels["waiting"] = new Label({x: 0.5, y: 0.62}, "Esperando   ", 100, false, false, true, labelFont2);
-	labels["main menu"] = new Label({x: 0.5, y: 0.78}, "Menu Principal", 100, false, false, true, labelFont, exitMatch);
+	labels["play"] = new Label({x: 0.5, y: 0.7}, "Jugar", 100, true, true,false, labelFont, enterQueue);
+	labels["searching"] = new Label({x: 0.5, y: 0.7}, "Buscando   ", 100, false, false,false, labelFont);
+	labels["result"] = new Label({x: 0.5, y: 0.3}, "", 100, false, false, false, labelFont);
+	labels["rematch"] = new Label({x: 0.5, y: 0.62}, "Revancha", 100, false, false, false, labelFont2, requestRematch);
+	labels["waiting"] = new Label({x: 0.5, y: 0.62}, "Esperando   ", 100, false, false, false, labelFont2);
+	labels["main menu"] = new Label({x: 0.5, y: 0.78}, "Menu Principal", 100, false, false, false, labelFont, exitMatch);
 	labels["timer"] = new Label({x: 0.5, y: 0.1}, 20, 64, false, false, false, labelFont);
 }
 
