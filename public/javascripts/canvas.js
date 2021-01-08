@@ -27,13 +27,13 @@ function init() {
 			card: undefined
 		});
 	}
-	labels["logo"] = new Label({x: 0.5, y: 0.3}, "Cardjitsu de 2 pesos", 100, true, false, false,labelFont);	
-	labels["play"] = new Label({x: 0.5, y: 0.7}, "Jugar", 134, true, true, false, labelFont, enterQueue);
-	labels["searching"] = new Label({x: 0.5, y: 0.7}, "Buscando   ", 134, false, false, false, labelFont);
-	labels["result"] = new Label({x: 0.5, y: 0.3}, "", 192, false, false, false, labelFont);
-	labels["rematch"] = new Label({x: 0.5, y: 0.62}, "Revancha", 128, false, false, false, labelFont, requestRematch);
-	labels["waiting"] = new Label({x: 0.5, y: 0.62}, "Esperando   ", 128, false, false, false, labelFont);
-	labels["main menu"] = new Label({x: 0.5, y: 0.78}, "Menu Principal", 128, false, false, false, labelFont, exitMatch);
+	labels["logo"] = new Label({x: 0.5, y: 0.3}, "Cardjitsu de 2 pesos", 100, true, false, true,labelFont2);	
+	labels["play"] = new Label({x: 0.5, y: 0.7}, "Jugar", 100, true, true, true, labelFont, enterQueue);
+	labels["searching"] = new Label({x: 0.5, y: 0.7}, "Buscando   ", 100, false, false, true, labelFont);
+	labels["result"] = new Label({x: 0.5, y: 0.3}, "", 100, false, false, true, labelFont);
+	labels["rematch"] = new Label({x: 0.5, y: 0.62}, "Revancha", 100, false, false, true, labelFont2, requestRematch);
+	labels["waiting"] = new Label({x: 0.5, y: 0.62}, "Esperando   ", 100, false, false, true, labelFont2);
+	labels["main menu"] = new Label({x: 0.5, y: 0.78}, "Menu Principal", 100, false, false, true, labelFont, exitMatch);
 	labels["timer"] = new Label({x: 0.5, y: 0.1}, 20, 64, false, false, false, labelFont);
 }
 
@@ -203,7 +203,7 @@ function drawCard(card, position, scale) {
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(position.x + cardWidth, position.y + cardHeight , cardWidth , cardHeight);
 	ctx.fillStyle = typeColors[card.type];
-	ctx.font = "bold " + (64 * scale * r) + "px chinese_takeaway";
+	ctx.font = "bold " + (64 * scale * r) + "px Roboto";
 	ctx.fillText(card.power, position.x + cardWidth * scale / 2, position.y + cardHeight * scale * 0.4);
 	ctx.font = (32 * scale * r) + "px Arial";
 	ctx.fillText(types[card.type], position.x + cardWidth * scale / 2, position.y + cardHeight * scale * 0.7);
@@ -267,17 +267,19 @@ function drawPoints() {
 	}
 }
 
+
+//aqui cambias el color del texto
 function drawLabel(label) {
 	ctx.textBaseline = "middle";
 	ctx.textAlign = "center";
 	ctx.font = (label.size * r) + "px " + label.font;
 	var shadowDistance = label.size / 30;
 	if (!label.disabled) {
-		ctx.fillStyle = "#9a9a9a";
+		ctx.fillStyle = "#34252F";
 		ctx.fillText(label.text, canvas.width * label.position.x + (shadowDistance * r), canvas.height * label.position.y + (shadowDistance * r));
-		ctx.fillStyle = "#000000";
+		ctx.fillStyle = "#34252F";
 	} else {
-		ctx.fillStyle = "#9a9a9a";
+		ctx.fillStyle = "#34252F";
 	}
 	if (label.down) {
 		ctx.fillText(label.text, canvas.width * label.position.x + (shadowDistance * 0.5 * r), canvas.height * label.position.y + (shadowDistance * 0.5 * r));
@@ -302,7 +304,8 @@ var clickCursor = false,
 	displayCardSlots = false,
 	aspect = 16 / 10,
 	labels = [],
-	labelFont = "Arial";
+	labelFont = "Arial"; //por si le quieres poner algun otro font family
+	labelFont2 = "Arial";
 var typeColors = ["#FF8B26", "#1260E6", "#74D5F2"];
 var types = ["Fuego", "Agua", "Hielo"];
 var colors = {"yellow": "#fdee00", "orange": "#ffb235", "green": "#52a546", "blue": "#246acd", "red": "#e02929", "purple": "#9738af"};
@@ -315,3 +318,4 @@ canvas.addEventListener("mousemove", handleMouseMove, false);
 canvas.addEventListener("mousedown", handleMouseDown, false);
 canvas.addEventListener("mouseup", handleMouseUp, false);
 setInterval(animateLabels, 300);
+
